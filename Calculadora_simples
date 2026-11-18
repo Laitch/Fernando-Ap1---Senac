@@ -1,0 +1,90 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package aula11_exemplo1_funcoes;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author luiz.hbfsantos
+ */
+public class Calculadorasimples {
+    public static int menu(){
+        Scanner teclado = new Scanner(System.in);
+        int op;
+        do{
+        System.out.println("========================");
+        System.out.println("--Calculadora simples--");
+        System.out.println("========================");
+        System.out.println("Subtracao (1)");
+        System.out.println("Divisao (2)");
+        System.out.println("Multiplicacao (3)");
+        System.out.println("Adicao (4)");
+        System.out.println("Opcao: ");
+        op = teclado.nextInt();
+        }while(op <1 || op>4);
+        return op;
+
+    }
+    
+    public static float EntradaDados(){
+        System.out.println("-----Entrada de dados-----");
+        Scanner teclado = new Scanner(System.in); 
+        System.out.println("Digite numero");
+        float n = teclado.nextFloat();
+        return n;
+    }
+        public static float subtracao(float n1, float n2){
+            System.out.println("====Subtracao=====");
+            float result = n1 - n2;
+         return result;
+
+        }
+
+    public static float divisao(float n1, float n2) {
+        System.out.println("===Divisão====");
+        return n1/n2;
+        
+    }
+    public static float multiplicacao (float n1, float n2) {
+        System.out.println("Multiplicacao");
+        return n1*n2;
+}
+    public static float adicao(float n1, float n2) {
+        System.out.println("Adicao");
+        return n1+n2;
+
+    }
+    public static void imprimir (float result) {
+        System.out.println("===Imprimir====");
+        System.out.println("Resultado: " + result);
+    }
+    public static float controlador(int op, float n1, float n2){
+        System.out.println("===Controlador====");
+        
+        float result = 0; 
+        
+        if(op == 1){
+            result = subtracao(n1, n2);
+}  else if(op == 2){
+            result = divisao(n1, n2);
+}else if(op == 3){
+result = multiplicacao(n1, n2);
+} else if(op == 4){
+            result = adicao(n1, n2);
+
+        }
+          return result;
+    }
+    public static void main(String [] args) {
+        System.out.println("===MAIN===");
+        int op = menu();
+        float n1 = EntradaDados();
+        float n2 = EntradaDados();
+        float result = controlador (op, n1, n2);
+        imprimir(result);
+        
+    }
+}
