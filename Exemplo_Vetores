@@ -1,0 +1,59 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package aula_13;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author luiz.hbfsantos
+ */
+public class ExemploVetores {
+
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        //variavel para armazenar o tamanho do vetor 
+        int tamanho = 10;
+
+        //instanciar um vetor 
+        int[] vetor = new int[tamanho];
+
+        //preencher o vetor 
+        for (int i = 0; i < tamanho; i++) {
+            System.out.println("Digite o numero " + (i + 1) + " :");
+            vetor[i] = leia.nextInt();
+        }
+
+        System.out.println("===========");
+
+        for (int i = 0; i < tamanho; i++) {
+            System.out.printf(" Vetor [%d]: %d\n", i, vetor[i]);
+        }
+        //somar todos os elementos do vetor
+        
+        int soma = 0;
+        for (int i = 0; i < tamanho; i++) {
+            soma += vetor[i];
+        }
+        System.out.println("Soma: " + soma);
+        System.out.println("====================");
+
+        //encontrar o menor e o maior valor do vetor
+        int maior = vetor[0];
+        int menor = vetor[0];
+        for (int i = 0; i < tamanho; i++) {
+            if (maior< vetor[i]) {
+                maior = vetor[i];
+            }
+            if (menor > vetor[i]) {
+                menor = vetor[i];
+            }
+
+        }
+        System.out.println("O maior foi: " + maior);
+        System.out.println("O menor foi: " + menor);
+    }
+}
