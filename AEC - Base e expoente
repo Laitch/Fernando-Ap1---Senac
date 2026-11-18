@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package base.e.expoente;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author luiz.hbfsantos
+ */
+public class BaseEExpoente {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Digite a base:");
+        double base = teclado.nextDouble();
+        
+        System.out.println("Digite o expoente:");
+        double expoente = teclado.nextDouble();
+        
+        double resultado = Math.pow(base, expoente);
+        
+        System.out.println("A o resultado da base e o expoente é" + resultado);
+        
+    }
+    
+}
