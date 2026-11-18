@@ -1,0 +1,95 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package função_aula14;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author luiz.hbfsantos
+ */
+
+public class Função_Aula14 {
+        
+        //1. Preencher a matriz via Scanner
+        public static void preencherNotas(float [] [] matriz, Scanner teclado){
+            System.out.println("---- Preenchendo a matriz ----");
+            for(int i=0; i<matriz.length; i++){
+                System.out.println("---- Nota do aluno " + (i+1) + "----");
+                for(int j=0; j<matriz[i].length; j++){
+                    System.out.println("Avaliação: " + (j+1) + ": ");
+                    matriz [i] [j] = teclado.nextFloat();
+                    
+                }
+            }
+    }
+    //2. Imprimir elemento por elemento da matriz 
+        public static void ImprimirMatriz(float [] [] matriz){
+            System.out.println("---- Imprimindo a matriz ----");
+            for (int i = 0; i <matriz.length; i++) {
+                System.out.print("Aluno " + (i+1) + ":\t");
+                for (int j = 0; j <matriz[i].length; j++) {
+                    System.out.printf("%.1f\t", matriz[i][j]);
+                    
+                }
+                
+                //quebrar uma linha ao terminar as colunas
+                System.out.println();
+            }
+            
+            
+        }
+        
+        //Funcão com retorno de array com as médias dos alunos
+        public static float[] CalcularMediaPorAluno(float[][]matriz) {
+        
+        //criação do vetor medias
+        float[] medias = new float[matriz.length];
+        
+            
+            for (int i = 0; i<matriz.length; i++) {
+                float soma= 0;
+                for (int j = 0; j<matriz.length; j++) {
+                    soma+=matriz[i][j];
+                }
+             medias[i] = soma/matriz[i].length;
+            }
+return medias;
+}
+ //3.imprimir o vetor de médias 
+public static void ImprimirVetorMedias(float[]medias) {
+    for (int i = 0; i <medias.length; i++) {
+        System.out.printf("Aluno %d -> Média: %.1f\n", i, medias[i]);
+        
+    }
+}
+
+        //4. Função que verifique a quantidade de alunos abaixo da media
+//Obs: Recebe o vetor de médias e retorne a qtde 
+
+
+        public static void main(String[]args) {
+            Scanner teclado = new Scanner(System.in);
+           
+            int Qtdalunos = 3;
+            int Qtdnotas = 4;
+            
+            //declaração de matri: 3 (Alunos) x 4(Notas)
+            float[][] notas = new float[Qtdnotas][Qtdalunos];
+            
+            //1. passagem da matriz e do Scanner por parametro
+            preencherNotas(notas, teclado);
+            
+            //2. Impressão da matriz
+            System.out.println("=== Boletim da turma ====");
+            ImprimirMatriz(notas);
+            
+            //3. Calcular medias alunos 
+            float[] MediasAlunos = CalcularMediaPorAluno(notas);
+            System.out.println("==== Media individual dos alunos ====");
+            ImprimirVetorMedias(MediasAlunos);
+        }
+        
+}
