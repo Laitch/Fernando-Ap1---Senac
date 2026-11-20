@@ -1,0 +1,38 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package somanumerosinteiros;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author luiz.hbfsantos
+ */
+public class SomaNumerosInteiros {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Digite seu numero:");
+        double num = teclado.nextDouble();
+
+        int soma = 0;
+        int contador = 1;
+
+        while (contador <= num) {
+
+            soma += contador;
+            contador++;
+        }
+
+        System.out.println("A soma dos numeros inteiros de 1 a " + num + " da o resultado: " + soma);
+
+    }
+}
